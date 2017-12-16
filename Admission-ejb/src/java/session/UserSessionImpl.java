@@ -6,6 +6,8 @@
 package session;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -17,5 +19,8 @@ public class UserSessionImpl implements UserSession {
     public String welcomeUser (String name){
         return "Welcome to our website, " + name + "!";
     }
+    @PersistenceContext
+    private EntityManager em;
+
 }
 
