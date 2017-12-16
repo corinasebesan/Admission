@@ -5,13 +5,13 @@
  */
 package session;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 /**
  *
  * @author cory4
  */
-@Remote
+@Local
 public interface UserSession {
     String welcomeUser(String name);
 }
