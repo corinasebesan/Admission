@@ -1,0 +1,6 @@
+/dist/
+/build/
+/Admission-ejb/dist/
+/Admission-ejb/build/
+/Admission-war/build/
+/Admission-war/dist/
