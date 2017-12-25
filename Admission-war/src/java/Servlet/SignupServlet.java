@@ -5,7 +5,7 @@
 */
 package Servlet;
 import session.UserSession;
-//import session.User;
+import entity.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -43,7 +43,7 @@ public class SignupServlet extends HttpServlet {
         String password = request.getParameter("password");
         String cnp = request.getParameter("cnp");
         String phone = request.getParameter("phone");
-        //User user = new User(purpose, name, surname, email, password, cnp, phone);
+        User user = new User(purpose, name, surname, email, password, cnp, phone);
         
         try {
             out.println("<!DOCTYPE html>");
