@@ -1,0 +1,91 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 27, 2017, 1:13:47 AM
+    Author     : cory4
+*/
+body {
+	display: block;
+	max-width: 80%;
+	margin: 0 auto;
+	font-family: "Verdana", "Arial", sans-serif;
+	background: rgb(78,173,255);
+	color: rgb(0,0,0);
+	padding: 3px;
+}
+header {
+	background:rgb(28,249,146);
+	height: 120px;
+	padding: 1px 50px;
+}
+main{
+	background:rgb(220,267,244);
+	padding: 3px;
+	height: 99999px;
+}
+footer{
+	background:rgb(28,249,146);
+	padding: 3px;
+	text-align: center;
+}
+.italic {
+	font-style: italic;
+}
+.principal {
+	width: 65%;
+	float: left;
+}
+.dreapta {
+	width: 35%;
+	float: right;
+	background:rgb(222,228,176);
+}
+#nav li{
+	float: left;
+	margin-left: 20px;
+	text-align: center;
+	margin-top: 10px;
+	width: 190px;
+}
+#nav ul {
+        font-size: 19px;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+#nav li a:link, #nav li a:visited {
+        font-weight: bold;
+	text-decoration: none;
+	color: rgb(78,173,255);
+}
+#nav li a:hover {
+        font-weight: normal;
+	text-decoration: none;
+	display: block;
+	color: rgb(78,173,255);
+}
+#clear {
+	clear: both;
+}
+.chestie {
+	width: 30%;
+	background: rgb(130,240,170);
+	padding: 5px;
+}
+form {
+	background: rgb(130,240,170);
+	padding: 5px;
+	width: 30%;
+	color:black;
+}
+.erori {
+	font-size: 13px;
+	color: rgb(255,0,0);
+}
+h1{color: rgb(78,150,255);}
+h2{color: rgb(28,249,146);
+   padding-left: 2px;
+}
