@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "REGISTER")
 public class User implements Serializable {
-    private static String purpose, name, surname, email, password,cnp, phone;
+    private String purpose, name, surname, email, password,cnp, phone;
     @Id
     private Long id;
 
@@ -37,25 +37,58 @@ public class User implements Serializable {
     public Long getId() {
         return id;
     }
-    public static String getPurpose() {
+    public String getPurpose() {
         return purpose;
     }
-    public static String getName() {
+    public String getName() {
         return name;
     }
-    public static String getSurname() {
+    public String getSurname() {
         return surname;
     }
-    public static String getEmail() {
+    public String getEmail() {
         return email;
     }
-    public static String getPassword(){
+    public String getPassword(){
         return password;
     }
-    public static String getCnp() {
+    public String getCnp() {
         return cnp;
     }
-    public static String getPhone() {
+    public String getPhone() {
         return phone;
     }
+
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setCnp(String cnp) {
+        this.cnp = cnp;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
 }
