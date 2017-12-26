@@ -18,6 +18,7 @@ import javax.persistence.Table;
 @Table(name = "PERSONAL")
 public class PersonalData implements Serializable{
     private String father, previous_name, sex, birthdate, county, city, serie, number, issued_by, issued_at, expires_at;
+    @OneToOne
     private User user;
     @Id
     private Long id;
@@ -135,8 +136,6 @@ public class PersonalData implements Serializable{
     public void setExpires_at(String expires_at) {
         this.expires_at = expires_at;
     }
-    @OneToOne
-
     public User getUser() {
         return user;
     }
@@ -144,5 +143,4 @@ public class PersonalData implements Serializable{
     public void setUser(User user) {
         this.user = user;
     }
-    
 }
