@@ -48,7 +48,9 @@ footer{
 	margin-left: 20px;
 	text-align: center;
 	margin-top: 10px;
-	width: 190px;
+	width: 180px;
+        position:relative;
+        background-color: rgb(172, 235, 244);
 }
 #nav ul {
         font-size: 19px;
@@ -67,8 +69,38 @@ footer{
 	display: block;
 	color: rgb(78,173,255);
 }
+#nav li ul{
+    display:none;
+    position:absolute;
+    background-color: rgb(172, 235, 244);
+}
+#nav li:hover ul{
+    display:block;
+}
+#nav li ul li a:hover{
+    font-weight: normal;
+    text-decoration: none;
+    display: block;
+    color: rgb(78,173,255);
+}
 #clear {
 	clear: both;
+}
+#lis p {
+        font-size: 19px;
+	margin: 0px;
+	padding: 0px;
+}
+#lis p a:link, #lis p a:visited {
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(78,173,255);
+}
+#lis p a:hover {
+        font-weight: normal;
+	text-decoration: none;
+	display: block;
+	color: rgb(78,173,255);
 }
 .chestie {
 	width: 30%;
