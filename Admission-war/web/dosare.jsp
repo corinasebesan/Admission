@@ -1,9 +1,11 @@
+<%-- 
+    Document   : dosare
+    Created on : Dec 27, 2017, 4:18:02 PM
+    Author     : cory4
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Admitere online</title>
@@ -43,13 +45,9 @@ and open the template in the editor.
             </ul>
 	</div>
 	<div id=clear></div>
-        <h2>Pașii de parcurs:</h2>
-		<div id=lis>
-		<p><a href="date.jsp" target="_blank">1. Completezi Bio</a></p>
-		<p><a href="dosare.jsp" target="_blank">2. Finalizezi Dosare</a></p>
-		<p><a href="taxe.jsp" target="_blank">3. Faci Plata</a></p>
-		<p><a href="#" target="_blank">4. Mergi la facultate</a></p>
-		</div>
+        <h2>Dosarele mele</h2>
+		<p>Aici vei regăsi dosarele pe care le-ai deschis la sesiunile de admitere selectate. Dacă vrei să achiți toate taxele aferente dosarelor </p>
+                <p>dintr-o singură plată, te rugăm să completezi fiecare dosar, iar apoi le vei putea plăti pe toate împreună, la final. </p>
     </main>
     <footer>
 	<p>Copyright &copy; 2017 I.C.E.</p>  

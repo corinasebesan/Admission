@@ -15,7 +15,7 @@
     </head>
     <body>
         <header>
-		<h1>Admitere...</h1>
+		<h1>Admitere Facultatea de Inginerie</h1>
                 <p class="italic">Învățătura este o comoară care își va urma proprietarul peste tot. Proverb chinezesc</p>
 	</header>
         <main>

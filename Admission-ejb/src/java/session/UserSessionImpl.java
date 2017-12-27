@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
 public class UserSessionImpl implements UserSession {
     @Override
     public String welcomeUser (String name){
-        return "Welcome to our website, " + name + "!";
+        return "Bine ai venit " + name + "!";
     }
     @PersistenceContext
     private EntityManager em;

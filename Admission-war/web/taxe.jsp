@@ -1,9 +1,11 @@
+<%-- 
+    Document   : taxe
+    Created on : Dec 27, 2017, 3:47:40 PM
+    Author     : cory4
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Admitere online</title>
@@ -43,13 +45,19 @@ and open the template in the editor.
             </ul>
 	</div>
 	<div id=clear></div>
-        <h2>Pașii de parcurs:</h2>
-		<div id=lis>
-		<p><a href="date.jsp" target="_blank">1. Completezi Bio</a></p>
-		<p><a href="dosare.jsp" target="_blank">2. Finalizezi Dosare</a></p>
-		<p><a href="taxe.jsp" target="_blank">3. Faci Plata</a></p>
-		<p><a href="#" target="_blank">4. Mergi la facultate</a></p>
-		</div>
+        <h2>Plată taxe</h2>
+		<p>Pentru fiecare dosar poți achita individual taxa de înscriere sau poți selecta mai multe dosare finalizate pentru a le plăti împreună, </p>
+                <p>într-o singură tranzacție.</p>
+                <form action="plata" method="POST">
+                <label>Selecteaza dosare: </label><br>
+                <lable>Selecteaza modul de plată:</label>
+                <select name="mod">
+                    <option value="TCM">Card bancar</option>
+                    <option value="MUSP">Virament bancar (ordin de plată)</option>
+                    <option value="TTC">Cash(la facultate)</option>
+                    </select><br>
+                <input type="submit" value="Plateste">
+                </form>
     </main>
     <footer>
 	<p>Copyright &copy; 2017 I.C.E.</p>  

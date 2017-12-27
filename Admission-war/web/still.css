@@ -17,14 +17,14 @@ body {
 	padding: 3px;
 }
 header {
-	background:rgb(28,249,146);
+	background-color:rgb(28,249,146);
+        background-image: url("img.jpg");
 	height: 120px;
 	padding: 1px 50px;
 }
 main{
 	background:rgb(220,267,244);
 	padding: 3px;
-	height: 99999px;
 }
 footer{
 	background:rgb(28,249,146);
