@@ -1,6 +1,6 @@
 <%-- 
-    Document   : taxe
-    Created on : Dec 27, 2017, 3:47:40 PM
+    Document   : date
+    Created on : Dec 27, 2017, 9:50:10 PM
     Author     : cory4
 --%>
 
@@ -58,18 +58,28 @@
             </ul>
 	</div>
 	<div id=clear></div>
-        <h2>Plată taxe</h2>
-		<p>Pentru fiecare dosar poți achita individual taxa de înscriere sau poți selecta mai multe dosare finalizate pentru a le plăti împreună, </p>
-                <p>într-o singură tranzacție.</p>
-                <form action="plata" method="POST">
-                <label>Selecteaza dosare: </label><br>
-                <lable>Selecteaza modul de plată:</label>
-                <select name="mod" required>
-                    <option value="TCM">Card bancar</option>
-                    <option value="MUSP">Virament bancar (ordin de plată)</option>
-                    <option value="TTC">Cash(la facultate)</option>
-                    </select><br>
-                <input type="submit" value="Plateste">
+        <h2>Date personale</h2>
+                <form action="datepersonale" method="POST">
+                <label>Nume: </label><input type="text" name="name" required><br />
+                <label>Prenume: </label><input type="text" name="surname" required><br />
+                <label>Inițiala tatălui: </label><input type="text" name="tata" required><br />
+                <label>Nume anterior căsătorie(opțional): </label><input type="text" name="anterior"><br />
+                <label>Sexul: </label>
+                <select name="sexul" required>
+                    <option value="F">Feminin</option>
+                    <option value="M">Masculin</option>
+                </select><br>
+                <label>Data nașterii: </label><input type="date" name="bday" required><br />
+                <label>Județul: </label><input type="text" name="judet" required><br />
+                <label>Localitatea: </label><input type="text" name="localitate" required><br />
+                <label>CNP: </label><input type="text" name="cnp" required><br />
+                <label>Seria: </label><input type="text" name="seria" required><br />
+                <label>Numărul: </label><input type="text" name="numarul" required><br />
+                <label>Emis de: </label><input type="text" name="emisde" required><br />
+                <label>Emis la: </label><input type="date" name="emisla" required><br />
+                <label>Expiră la: </label><input type="date" name="expirala" required><br />
+                <input type="submit" value="Adauga">
+                <input type="reset">
                 </form>
     </main>
     <footer>

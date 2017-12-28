@@ -1,13 +1,13 @@
 <%-- 
-    Document   : taxe
-    Created on : Dec 27, 2017, 3:47:40 PM
+    Document   : info
+    Created on : Dec 27, 2017, 10:59:53 PM
     Author     : cory4
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <title>Admitere online</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
                 <p class="italic">Învățătura este o comoară care își va urma proprietarul peste tot. Proverb chinezesc</p>
 	</header>
         <main>
-        <div id="nav">
+<div id="nav">
             <ul>
                 <li><a href="userPage.html">Acasă</a></li>
                 <li><a href="http://inginerie.ulbsibiu.ro/" target="_blank">Site-ul facultății</a></li>
@@ -58,18 +58,43 @@
             </ul>
 	</div>
 	<div id=clear></div>
-        <h2>Plată taxe</h2>
-		<p>Pentru fiecare dosar poți achita individual taxa de înscriere sau poți selecta mai multe dosare finalizate pentru a le plăti împreună, </p>
-                <p>într-o singură tranzacție.</p>
-                <form action="plata" method="POST">
-                <label>Selecteaza dosare: </label><br>
-                <lable>Selecteaza modul de plată:</label>
-                <select name="mod" required>
-                    <option value="TCM">Card bancar</option>
-                    <option value="MUSP">Virament bancar (ordin de plată)</option>
-                    <option value="TTC">Cash(la facultate)</option>
-                    </select><br>
-                <input type="submit" value="Plateste">
+        <h2>Alte informații</h2>
+                <form action="informatii" method="POST">
+                <label>Starea civilă: </label>
+                <select name="stareacivila" required>
+                    <option value="casatorit">Căsătorit(ă)</option>
+                    <option value="divortat">Divorțat(ă)</option>
+                    <option value="necasatorit">Necăsătorit(ă)</option>
+                    <option value="vaduv">Văduv(ă)</option>
+                </select><br/>
+                <label>Naționalitatea: </label>
+                <select name="nationalitatea" required>
+                    <option value="alta">Altă naționalitate</option>
+                    <option value="romana">Română</option>
+                </select><br/>
+                <label>Etnia: </label><input type="text" name="etnie" required><br />
+                <label>Cetățenia: </label>
+                <select name="cetatenia">
+                    <option value=""></option>
+                    <option value="alta">Română cu domiciliu în România</option>
+                    <option value="romana">Română cu domiciliu în străinătate</option>
+                </select><br/>
+                <label>Altă cetățenie(opțional): </label><input type="text" name="altacetatenie"><br />
+                <label>Cetățenie anterioară(opțional): </label><input type="text" name="cetatenieant"><br />
+                <label>Stare socială specială(opțional): </label>
+                <select name="staresocialaspeciala">
+                    <option value=""></option>
+                    <option value="alta">Alte situații</option>
+                    <option value="orfanambii">Orfan de ambii părinți</option>
+                    <option value="orfanunul">Orfan de unul dintre părinți</option>
+                    <option value="casedecopii">Provenit din case de copii</option>
+                    <option value="monoparental">Provenit din familie monoparentală</option>
+                </select><br/>
+                <label for="dizabilitati">Situație dizabilități(opțional)</label>
+                    <input type="checkbox" name="dizabilitati0" value="dizabilitati"> (candidat ce se încadrează în categoria persoanelor cu dizabilități)	
+                    <br/>
+                <input type="submit" value="Adauga">
+                <input type="reset">
                 </form>
     </main>
     <footer>

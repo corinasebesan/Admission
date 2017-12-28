@@ -1,6 +1,6 @@
 <%-- 
-    Document   : taxe
-    Created on : Dec 27, 2017, 3:47:40 PM
+    Document   : liceale
+    Created on : Dec 27, 2017, 11:40:02 PM
     Author     : cory4
 --%>
 
@@ -58,18 +58,38 @@
             </ul>
 	</div>
 	<div id=clear></div>
-        <h2>Plată taxe</h2>
-		<p>Pentru fiecare dosar poți achita individual taxa de înscriere sau poți selecta mai multe dosare finalizate pentru a le plăti împreună, </p>
-                <p>într-o singură tranzacție.</p>
-                <form action="plata" method="POST">
-                <label>Selecteaza dosare: </label><br>
-                <lable>Selecteaza modul de plată:</label>
-                <select name="mod" required>
-                    <option value="TCM">Card bancar</option>
-                    <option value="MUSP">Virament bancar (ordin de plată)</option>
-                    <option value="TTC">Cash(la facultate)</option>
-                    </select><br>
-                <input type="submit" value="Plateste">
+        <h2>Studii liceale</h2>
+                <form action="studiiliceale" method="POST">
+                <label>Județul: </label><input type="text" name="judet" required><br />
+                <label>Liceul absolvit: </label><input type="text" name="liceulabsolvit" required><br />
+                <label>Profilul: </label><input type="text" name="profilul" required><br />
+                <label>Forma învățământ: </label>
+                <select name="formainvatamant" required>
+                    <option value="farafrecventa">Fără frecvență</option>
+                    <option value="ladistanta">Învățământ la distanță</option>
+                    <option value="zi">Zi(cu frecvență)</option>
+                    <option value="seral">Seral</option>
+                </select><br/>
+                <label>Durata studii (ani): </label><input type="text" name="duratastudii" required><br />
+                <label>Anul absolvirii: </label><input type="text" name="anulabsolvirii" required><br />
+                <label>Media liceu: </label><input type="text" name="medieliceu" required><br />
+                <label>Anul bacalaureatului: </label><input type="text" name="anbac" required><br />
+                <label>Media BAC: </label><input type="text" name="mediebac" required><br />
+                <p>Date identificare diplomă</p>
+                <label>Tipul: </label>
+                <select name="tipul" required>
+                    <option value="actechiv">Act echivalent(studii străinătate)</option>
+                    <option value="actrecunoastere">Act recunoaștere diplomă(DGRIE/DGRED)</option>
+                    <option value="adeverinta">Adeverința de bacalaureat</option>
+                    <option value="diploma">Diplomă de bacalaureat</option>
+                </select><br/>
+                <label>Emitent: </label><input type="text" name="emitent" required><br />
+                <label>Seria: </label><input type="text" name="seria" required><br />
+                <label>Numărul: </label><input type="text" name="numarul" required><br />
+                <label>An emitere: </label><input type="text" name="anemiter" required><br />
+                <label>Nr. foaie matricolă: </label><input type="text" name="numarfoaie" required><br />
+                <input type="submit" value="Adauga">
+                <input type="reset">
                 </form>
     </main>
     <footer>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : signup
-    Created on : Dec 16, 2017, 3:58:18 PM
+    Document   : login
+    Created on : Dec 28, 2017, 1:43:27 AM
     Author     : cory4
 --%>
 
@@ -37,21 +37,12 @@
             </ul>
 	</div>
 	<div id=clear></div>
-        <h2>Sign-up</h2>
-        <p>Va rugam completati formularul de inscriere!</p>
-        <form action="welcome" method="POST">
-            <label>Ma inscriu la: </label>
-                <select name="reference" required>
-                    <option value="Licenta">Licenta</option>
-                    <option value="Master">Master</option>
-                </select><br>
-            <label>Nume: </label><input type="text" name="name" required><br />
-            <label>Prenume: </label><input type="text" name="surname" required><br />
-            <label>Adresa de email: </label><input type="email" name="email" required><br />
+        <h2>Conectează-te</h2>
+        <form action="login" method="POST">
+            <label>Email: </label><input type="email" name="email" required><br />
             <label>Parola: </label><input type="password" name="password" required><br />
-            <label>CNP: </label><input type="text" name="cnp" required><br />
-            <label>Numarul de telefon: </label><input type="tel" name="phone" required><br />
-            <input type="submit" value="Sign-up">
+            <input type="reset">
+            <input type="submit" value="Login">
         </form>
     </main>
     <footer>
@@ -59,4 +50,3 @@
     </footer>
     </body>
 </html>
-

@@ -23,7 +23,15 @@
             <ul>
                 <li><a href="userPage.html">Acasă</a></li>
                 <li><a href="http://inginerie.ulbsibiu.ro/" target="_blank">Site-ul facultății</a></li>
-                <li><a href="listaSpecializari.html" target="_blank">Listă specializări</a></li>
+                <li><a href="#" target="_blank">Specializări</a>
+                    <ul>
+			<li><a href="listaSpecializari2.html" target="_blank">Listă specializări</a></li>
+			<li><a href="http://csac.ulbsibiu.ro/" target="_blank">Departamentul de Calculatoare și Inginerie Electrică</a></li>
+                        <li><a href="http://old.inginerie.ulbsibiu.ro/dep.iim/index.php?option=com_content" target="_blank">Departamentul de Inginerie Industrială și Management</a></li>
+                        <li><a href="http://old.inginerie.ulbsibiu.ro/dep.mei/ro/" target="_blank">Departamentul de Mașini și Echipamente Industriale</a></li>
+                        <li><a href=# target="_blank">Departamentul IOSUD (în construcție)</a></li>
+                    </ul>
+                </li>
 				<li><a href="#" target="_blank">Bio</a>
 					<ul>
 						<li><a href="date.jsp" target="_blank">Date personale</a></li>
@@ -41,21 +49,26 @@
 						<li><a href="taxe.jsp" target="_blank">Plată taxe</a></li>
 					</ul>
 				</li>
-                <li><a href="detaliiCont.html" target="_blank">Contul meu</a></li>
+                <li><a href="#" target="_blank">Contul meu</a>
+                    <ul>
+						<li><a href="detaliiCont.html" target="_blank">Detalii cont</a></li>
+						<li><a href="index.html" target="_blank">Log out</a></li>
+                    </ul>
+                </li>
             </ul>
 	</div>
 	<div id=clear></div>
         <h2>Sesiuni de admitere</h2>
 		<p>Pentru fiecare sesiune de admitere la care dorești să te înscrii poți deschide un dosar unde vei putea configura opțiunile de </p>
 		<p>admitere. Expandează sesiunile pentru a vedea ce facultăți participă în cadrul fiecăreia.</p>
-                <form action="adddos" method="POST">
+                <form action="addses" method="POST">
                 <label>Sesiunea: </label>
-                <select name="sesiune">
+                <select name="sesiune" required>
                     <option value="Vara">Sesiunea de vara</option>
                     <option value="Toamna">Sesiunea de toamna</option>
                 </select><br>
                 <label>Specializarea: </label>
-                <select name="sesiune">
+                <select name="sesiune" required>
                     <option value="TCM">Tehnologia construcțiilor de mașini</option>
                     <option value="MUSP">Mașini unelte și sisteme de producție</option>
                     <option value="TTC">Tehnologia tricotajelor și confecțiilor</option>

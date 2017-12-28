@@ -1,6 +1,6 @@
 <%-- 
-    Document   : taxe
-    Created on : Dec 27, 2017, 3:47:40 PM
+    Document   : domiciliu
+    Created on : Dec 27, 2017, 11:39:42 PM
     Author     : cory4
 --%>
 
@@ -58,18 +58,19 @@
             </ul>
 	</div>
 	<div id=clear></div>
-        <h2>Plată taxe</h2>
-		<p>Pentru fiecare dosar poți achita individual taxa de înscriere sau poți selecta mai multe dosare finalizate pentru a le plăti împreună, </p>
-                <p>într-o singură tranzacție.</p>
-                <form action="plata" method="POST">
-                <label>Selecteaza dosare: </label><br>
-                <lable>Selecteaza modul de plată:</label>
-                <select name="mod" required>
-                    <option value="TCM">Card bancar</option>
-                    <option value="MUSP">Virament bancar (ordin de plată)</option>
-                    <option value="TTC">Cash(la facultate)</option>
-                    </select><br>
-                <input type="submit" value="Plateste">
+        <h2>Domiciliu stabil</h2>
+                <form action="domiciliulstabil" method="POST">
+                <label>Județul: </label><input type="text" name="judet" required><br />
+                <label>Localitatea: </label><input type="text" name="localitate" required><br />
+                <label>Cod poștal: </label><input type="text" name="codpostal" required><br />
+                <label>Strada: </label><input type="text" name="strada" required><br />
+                <label>Numărul: </label><input type="text" name="numarul" required><br />
+                <label>Blocul(opțional): </label><input type="text" name="blocul"><br />
+                <label>Scara(opțional): </label><input type="text" name="scara"><br />
+                <label>Etajul(opțional): </label><input type="text" name="etajul"><br />
+                <label>Apartamentul(opțional): </label><input type="text" name="apartamentul"><br />
+                <input type="submit" value="Adauga">
+                <input type="reset">
                 </form>
     </main>
     <footer>
