@@ -41,7 +41,7 @@
         <p>Va rugam completati formularul de inscriere!</p>
         <form action="welcome" method="POST">
             <label>Ma inscriu la: </label>
-                <select name="reference" required>
+                <select name="purpose" required>
                     <option value="Licenta">Licenta</option>
                     <option value="Master">Master</option>
                 </select><br>

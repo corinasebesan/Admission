@@ -6,7 +6,10 @@
 package entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 /**
@@ -16,9 +19,28 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "RESIDENCE")
 public class StableReidency implements Serializable {
-    private String county,city,postal_code,street,house_number,block,stair,floor,appartament;
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column
     private Long id;
+    @Column
+    private String county;
+    @Column
+    private String city;
+    @Column
+    private String postal_code;
+    @Column
+    private String street;
+    @Column
+    private String house_number;
+    @Column
+    private String block;
+    @Column
+    private String stair;
+    @Column
+    private String floor;
+    @Column
+    private String appartament;
 
     public StableReidency() {
     }

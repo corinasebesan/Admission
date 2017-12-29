@@ -5,7 +5,6 @@
 */
 package Servlet;
 import session.UserSession;
-import entity.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 *
 * @author cory4
 */
-@WebServlet(name = "SignupServlet", urlPatterns = {"/welcome"})
-public class SignupServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
+public class LoginServlet extends HttpServlet {
     @EJB
     private UserSession userSessionImpl;
      
@@ -35,19 +34,15 @@ public class SignupServlet extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
-        String purpose = request.getParameter("purpose");
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
+     
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String cnp = request.getParameter("cnp");
-        String phone = request.getParameter("phone");
-        User user = new User(purpose, name, surname, email, password, cnp, phone);
-
-         userSessionImpl.addUser(user);
+        String name=userSessionImpl.getNameByEmailAndPassword(email, password);
+        
         
         try {
+            if(name!="")
+        {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -115,6 +110,7 @@ public class SignupServlet extends HttpServlet {
             out.println("</footer>");
             out.println("</body>");
             out.println("</html>");
+        }
         }
         finally{
             out.close();

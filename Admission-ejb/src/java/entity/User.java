@@ -6,8 +6,13 @@
 package entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -16,10 +21,27 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "REGISTER")
+@NamedQueries({@NamedQuery(name="User.getAll",query="SELECT e FROM User e"),
+@NamedQuery(name="User.getNameByEmailAndPassword",query="SELECT u.name FROM User u WHERE u.email= :email AND u.password= :password")})
 public class User implements Serializable {
-    private String purpose, name, surname, email, password,cnp, phone;
     @Id
-    private Long id;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column
+    private int iduser;
+    @Column
+    private String purpose;
+    @Column
+    private String name;
+    @Column
+    private String surname;
+    @Column
+    private String email;
+    @Column
+    private String password;
+    @Column
+    private String cnp;
+    @Column
+    private String phone;
 
     public User() {
     }
@@ -34,8 +56,8 @@ public class User implements Serializable {
     this.cnp = cnp;
     this.phone = phone;
     }
-    public Long getId() {
-        return id;
+    public int getId() {
+        return iduser;
     }
     public String getPurpose() {
         return purpose;
@@ -87,8 +109,8 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(int iduser) {
+        this.iduser = iduser;
     }
     
 }

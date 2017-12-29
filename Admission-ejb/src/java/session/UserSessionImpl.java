@@ -5,6 +5,8 @@
  */
 package session;
 
+import entity.User;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -21,6 +23,37 @@ public class UserSessionImpl implements UserSession {
     }
     @PersistenceContext
     private EntityManager em;
+    
+    @Override
+    public void addUser(User user) {
+        em.persist(user);
+    }
 
+    @Override
+    public void editUser(User user) {
+        em.merge(user);
+    }
+
+    @Override
+    public void deleteUser(int iduser) {
+        em.remove(getUser(iduser));
+    }
+
+    @Override
+    public User getUser(int iduser) {
+        return em.find(User.class, iduser);
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return em.createNamedQuery("User.getAll").getResultList();
+    }
+
+    @Override
+    public String getNameByEmailAndPassword(String email, String password) {
+        String name=(String)em.createNamedQuery("User.getNameByEmailAndPassword").setParameter("email", email).setParameter("password", password).getSingleResult();
+        return name;
+    }
+    
 }
 

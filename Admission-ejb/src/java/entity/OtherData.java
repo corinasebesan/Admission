@@ -6,7 +6,10 @@
 package entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 /**
@@ -16,10 +19,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "OTHERS")
 public class OtherData implements Serializable {
-    private String civil_state,natinality,ethnicity,citizenship,previous_citizenship,special_social,handicaped;
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column
     private Long id;
-
+    @Column
+    private String civil_state;
+    @Column
+    private String natinality;
+    @Column
+    private String ethnicity;
+    @Column
+    private String citizenship;
+    @Column
+    private String previous_citizenship;
+    @Column
+    private String special_social;
+    @Column
+    private String handicaped;
+    
     public OtherData() {
     }
 

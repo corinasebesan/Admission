@@ -6,7 +6,10 @@
 package entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -17,11 +20,34 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PERSONAL")
 public class PersonalData implements Serializable{
-    private String father, previous_name, sex, birthdate, county, city, serie, number, issued_by, issued_at, expires_at;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column
+    private Long id;
+    @Column
+    private String father; 
+    @Column
+    private String previous_name;
+    @Column
+    private String sex;
+    @Column
+    private String birthdate;
+    @Column
+    private String county;
+    @Column
+    private String city; 
+    @Column
+    private String serie;
+    @Column
+    private String number;
+    @Column
+    private String issued_by;
+    @Column
+    private String issued_at;
+    @Column
+    private String expires_at;
     @OneToOne
     private User user;
-    @Id
-    private Long id;
 
     public PersonalData() {
     }

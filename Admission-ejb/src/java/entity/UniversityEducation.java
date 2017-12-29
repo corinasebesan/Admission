@@ -6,7 +6,10 @@
 package entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 /**
@@ -16,9 +19,46 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "UNIVERSITY")
 public class UniversityEducation implements Serializable {
-    private String county,university,domain,faculty,specialty,title,educational_form,financial_form,duration, graduation, exam_average, years_average, type, issuer, serie, number, issue_year,transcript_number;
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column
     private Long id;
+    @Column
+    private String county;
+    @Column
+    private String domain;
+    @Column
+    private String duration; 
+    @Column
+    private String educational_form;
+    @Column
+    private String exam_average;
+    @Column
+    private String faculty;
+    @Column
+    private String financial_form;
+    @Column
+    private String graduation;
+    @Column
+    private String issue_year;
+    @Column
+    private String issuer; 
+    @Column
+    private String number;
+    @Column
+    private String serie;
+    @Column
+    private String specialty;
+    @Column
+    private String title;
+    @Column
+    private String transcript_number;
+    @Column
+    private String type; 
+    @Column
+    private String university;
+    @Column
+    private String years_average; 
 
     public UniversityEducation() {
     }

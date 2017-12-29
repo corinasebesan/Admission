@@ -5,6 +5,8 @@
  */
 package session;
 
+import entity.User;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -14,5 +16,17 @@ import javax.ejb.Local;
 @Local
 public interface UserSession {
     String welcomeUser(String name);
+
+    void addUser(User user);
+
+    void editUser(User user);
+
+    void deleteUser(int iduser);
+
+    User getUser(int iduser);
+
+    List<User> getAllUsers();
+
+    String getNameByEmailAndPassword(String email, String password);
 }
 
