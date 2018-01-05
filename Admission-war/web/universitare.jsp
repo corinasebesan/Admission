@@ -51,7 +51,7 @@
 				</li>
                 <li><a href="#" target="_blank">Contul meu</a>
                     <ul>
-						<li><a href="detaliiCont.html" target="_blank">Detalii cont</a></li>
+						<li><a href="/Admission-war/detaliicont" target="_blank">Detalii cont</a></li>
 						<li><a href="index.html" target="_blank">Log out</a></li>
                     </ul>
                 </li>

@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 /**
  *
@@ -18,11 +20,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "UNIVERSITY")
+@NamedQueries(@NamedQuery(name="UniversityEducation.getAll",query="SELECT e FROM UniversityEducation e"))
 public class UniversityEducation implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long id;
+    private Long iduniv;
     @Column
     private String county;
     @Column
@@ -63,7 +66,7 @@ public class UniversityEducation implements Serializable {
     public UniversityEducation() {
     }
     
-    public UniversityEducation(String county, String university, String domain, String faculty, String specialty, String title, String educational_form, String financial_form, String duration, String graduation, String exam_average, String years_average, String type, String issuer, String serie, String number, String issue_year, String transcript_number, Long id) {
+    public UniversityEducation(String county, String university, String domain, String faculty, String specialty, String title, String educational_form, String financial_form, String duration, String graduation, String exam_average, String years_average, String type, String issuer, String serie, String number, String issue_year, String transcript_number) {
         this.county = county;
         this.university = university;
         this.domain = domain;
@@ -82,15 +85,14 @@ public class UniversityEducation implements Serializable {
         this.number = number;
         this.issue_year = issue_year;
         this.transcript_number = transcript_number;
-        this.id = id;
     }
     
     public Long getId() {
-        return id;
+        return iduniv;
     }
     
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long iduniv) {
+        this.iduniv = iduniv;
     }
 
     public String getCounty() {

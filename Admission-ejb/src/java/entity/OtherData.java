@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 /**
  *
@@ -18,15 +20,16 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "OTHERS")
+@NamedQueries(@NamedQuery(name="OtherData.getAll",query="SELECT e FROM OtherData e"))
 public class OtherData implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long id;
+    private Long idoth;
     @Column
     private String civil_state;
     @Column
-    private String natinality;
+    private String nationality;
     @Column
     private String ethnicity;
     @Column
@@ -41,31 +44,30 @@ public class OtherData implements Serializable {
     public OtherData() {
     }
 
-    public OtherData(String civil_state, String natinality, String ethnicity, String citizenship, String previous_citizenship, String special_social, String handicaped, Long id) {
+    public OtherData(String civil_state, String nationality, String ethnicity, String citizenship, String previous_citizenship, String special_social, String handicaped) {
         this.civil_state = civil_state;
-        this.natinality = natinality;
+        this.nationality = nationality;
         this.ethnicity = ethnicity;
         this.citizenship = citizenship;
         this.previous_citizenship = previous_citizenship;
         this.special_social = special_social;
         this.handicaped = handicaped;
-        this.id = id;
     }
     
     public Long getId() {
-        return id;
+        return idoth;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long idoth) {
+        this.idoth = idoth;
     }
 
     public String getCivil_state() {
         return civil_state;
     }
 
-    public String getNatinality() {
-        return natinality;
+    public String getNationality() {
+        return nationality;
     }
 
     public String getEthnicity() {
@@ -92,8 +94,8 @@ public class OtherData implements Serializable {
         this.civil_state = civil_state;
     }
 
-    public void setNatinality(String natinality) {
-        this.natinality = natinality;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public void setEthnicity(String ethnicity) {

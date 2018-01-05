@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 /**
  *
@@ -18,11 +20,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "RESIDENCE")
+@NamedQueries(@NamedQuery(name="StableReidency.getAll",query="SELECT e FROM StableReidency e"))
 public class StableReidency implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long id;
+    private Long idres;
     @Column
     private String county;
     @Column
@@ -45,7 +48,7 @@ public class StableReidency implements Serializable {
     public StableReidency() {
     }
 
-    public StableReidency(String county, String city, String postal_code, String street, String house_number, String block, String stair, String floor, String appartament, Long id) {
+    public StableReidency(String county, String city, String postal_code, String street, String house_number, String block, String stair, String floor, String appartament) {
         this.county = county;
         this.city = city;
         this.postal_code = postal_code;
@@ -55,15 +58,14 @@ public class StableReidency implements Serializable {
         this.stair = stair;
         this.floor = floor;
         this.appartament = appartament;
-        this.id = id;
     }
     
     public Long getId() {
-        return id;
+        return idres;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long idres) {
+        this.idres = idres;
     }
 
     public String getCounty() {

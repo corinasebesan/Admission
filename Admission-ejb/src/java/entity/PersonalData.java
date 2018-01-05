@@ -11,7 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 /**
  *
@@ -19,11 +20,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PERSONAL")
+@NamedQueries(@NamedQuery(name="PersonalData.getAll",query="SELECT e FROM PersonalData e"))
 public class PersonalData implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long id;
+    private Long idper;
     @Column
     private String father; 
     @Column
@@ -46,13 +48,17 @@ public class PersonalData implements Serializable{
     private String issued_at;
     @Column
     private String expires_at;
-    @OneToOne
-    private User user;
+    @Column
+    private String name;
+    @Column
+    private String surname;
+    @Column
+    private String cnp;
 
     public PersonalData() {
     }
 
-    public PersonalData(String father, String previous_name, String sex, String birthdate, String county, String city, String serie, String number, String issued_by, String issued_at, String expires_at, Long id) {
+    public PersonalData(String father, String previous_name, String sex, String birthdate, String county, String city, String serie, String number, String issued_by, String issued_at, String expires_at, String name, String surname, String cnp) {
         this.father = father;
         this.previous_name = previous_name;
         this.sex = sex;
@@ -64,15 +70,17 @@ public class PersonalData implements Serializable{
         this.issued_by = issued_by;
         this.issued_at = issued_at;
         this.expires_at = expires_at;
-        this.id = id;
+        this.name=name;
+        this.surname=surname;
+        this.cnp=cnp;
     }
     
     public Long getId() {
-        return id;
+        return idper;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long idper) {
+        this.idper = idper;
     }
 
     public String getFather() {
@@ -162,11 +170,29 @@ public class PersonalData implements Serializable{
     public void setExpires_at(String expires_at) {
         this.expires_at = expires_at;
     }
-    public User getUser() {
-        return user;
+
+    public String getName() {
+        return name;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public String getSurname() {
+        return surname;
     }
+
+    public String getCnp() {
+        return cnp;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setCnp(String cnp) {
+        this.cnp = cnp;
+    }
+    
 }

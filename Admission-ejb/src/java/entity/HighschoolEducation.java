@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 /**
  *
@@ -18,11 +20,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "HIGHSCHOOL")
+@NamedQueries(@NamedQuery(name="HighschoolEducation.getAll",query="SELECT e FROM HighschoolEducation e"))
 public class HighschoolEducation implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long id;
+    private Long idhigh;
     @Column
     private String highschool_county;
     @Column
@@ -57,7 +60,7 @@ public class HighschoolEducation implements Serializable {
     public HighschoolEducation() {
     }
 
-    public HighschoolEducation(String highschool_county, String graduated_highschool, String section, String form, String duration, String graduation, String highschool_average, String bac_year, String bac_average, String type, String issuer, String diploma_serie, String diploma_number, String issue_year, String transcript_number, Long id) {
+    public HighschoolEducation(String highschool_county, String graduated_highschool, String section, String form, String duration, String graduation, String highschool_average, String bac_year, String bac_average, String type, String issuer, String diploma_serie, String diploma_number, String issue_year, String transcript_number) {
         this.highschool_county = highschool_county;
         this.graduated_highschool = graduated_highschool;
         this.section = section;
@@ -73,15 +76,14 @@ public class HighschoolEducation implements Serializable {
         this.diploma_number = diploma_number;
         this.issue_year = issue_year;
         this.transcript_number = transcript_number;
-        this.id = id;
     }
     
     public Long getId() {
-        return id;
+        return idhigh;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long idhigh) {
+        this.idhigh = idhigh;
     }
 
     public String getHighschool_county() {

@@ -1,11 +1,13 @@
 /*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Servlet;
+
+import entity.CountDetails;
+import entity.PersonalData;
 import session.UserSession;
-import entity.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.ejb.EJB;
@@ -14,12 +16,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
 /**
-*
-* @author cory4
-*/
-@WebServlet(name = "SignupServlet", urlPatterns = {"/welcome"})
-public class SignupServlet extends HttpServlet {
+ *
+ * @author cory4
+ */
+@WebServlet(name = "DetailsServlet", urlPatterns = {"/detaliicont"})
+public class DetailsServlet extends HttpServlet {
+
     @EJB
     private UserSession userSessionImpl;
      
@@ -29,24 +34,31 @@ public class SignupServlet extends HttpServlet {
         processRequest(request,  response);
         
     }
-    
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        processRequest(request,  response);
+        
+    }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-
-        String purpose = request.getParameter("purpose");
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String cnp = request.getParameter("cnp");
-        String phone = request.getParameter("phone");
-        User user = new User(purpose, name, surname, email, password, cnp, phone);
-
-         userSessionImpl.addUser(user);
-         request.setAttribute("name", name);
+        CountDetails cd1 = new CountDetails(1,"Date personale", "Nu exista");
+        CountDetails cd2 = new CountDetails(2,"Alte informatii", "Nu exista");
+        CountDetails cd3 = new CountDetails(3,"Domiciliu", "Nu exista");
+        CountDetails cd4 = new CountDetails(4,"Studii liceale", "Nu exista");
+        CountDetails cd5 = new CountDetails(5,"Studii universitare", "Nu exista");
+        CountDetails cd6 = new CountDetails(6,"Documente", "Nu exista");
+        CountDetails cd7 = new CountDetails(7,"Taxa", "Nu exista");
+        userSessionImpl.addCountDetails(cd1);
+        userSessionImpl.addCountDetails(cd2);
+        userSessionImpl.addCountDetails(cd3);
+        userSessionImpl.addCountDetails(cd4);
+        userSessionImpl.addCountDetails(cd5);
+        userSessionImpl.addCountDetails(cd6);
+        userSessionImpl.addCountDetails(cd7);
+        
         try {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -101,13 +113,38 @@ public class SignupServlet extends HttpServlet {
             out.println("</ul>");
             out.println("</div>");
             out.println("<div id=clear></div>");
-            out.println("<h2>"+ userSessionImpl.welcomeUser(name)+"</h2>");
-            out.println("<p>Pașii de parcurs:</p>");
+            out.println("<h2>Ce ați completat până acum:</h2>");
             out.println("<div id=lis>");
-            out.println("<p><a href=\"date.jsp\" >1. Completezi Bio</a></p>");
-            out.println("<p><a href=\"dosare.jsp\" >2. Finalizezi Dosare</a></p>");
-            out.println("<p><a href=\"taxe.jsp\" >3. Faci Plata</a></p>");
-            out.println("<p><a href=\"#\" >4. Mergi la facultate</a></p>");
+            out.println("<table>");
+            out.println("<tr>");
+            out.println("<td>"+cd1.getForm()+"</td>");
+            out.println("<td>"+cd1.getExist()+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>"+cd2.getForm()+"</td>");
+            out.println("<td>"+cd2.getExist()+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>"+cd3.getForm()+"</td>");
+            out.println("<td>"+cd3.getExist()+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>"+cd4.getForm()+"</td>");
+            out.println("<td>"+cd4.getExist()+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>"+cd5.getForm()+"</td>");
+            out.println("<td>"+cd5.getExist()+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>"+cd6.getForm()+"</td>");
+            out.println("<td>"+cd6.getExist()+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>"+cd7.getForm()+"</td>");
+            out.println("<td>"+cd7.getExist()+"</td>");
+            out.println("</tr>");
+            out.println("</table>");
             out.println("</div>");
             out.println("</main>");
             out.println("<footer>");
@@ -120,5 +157,7 @@ public class SignupServlet extends HttpServlet {
             out.close();
         }
     }
-}
 
+
+
+}

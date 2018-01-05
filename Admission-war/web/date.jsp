@@ -51,7 +51,7 @@
 				</li>
                 <li><a href="#" target="_blank">Contul meu</a>
                     <ul>
-						<li><a href="detaliiCont.html" target="_blank">Detalii cont</a></li>
+						<li><a href="/Admission-war/detaliicont" target="_blank">Detalii cont</a></li>
 						<li><a href="index.html" target="_blank">Log out</a></li>
                     </ul>
                 </li>
@@ -62,22 +62,22 @@
                 <form action="datepersonale" method="POST">
                 <label>Nume: </label><input type="text" name="name" required><br />
                 <label>Prenume: </label><input type="text" name="surname" required><br />
-                <label>Inițiala tatălui: </label><input type="text" name="tata" required><br />
-                <label>Nume anterior căsătorie(opțional): </label><input type="text" name="anterior"><br />
+                <label>Inițiala tatălui: </label><input type="text" name="father" required><br />
+                <label>Nume anterior căsătorie(opțional): </label><input type="text" name="previous_name"><br />
                 <label>Sexul: </label>
-                <select name="sexul" required>
-                    <option value="F">Feminin</option>
-                    <option value="M">Masculin</option>
+                <select name="sex" required>
+                    <option value="Feminin">Feminin</option>
+                    <option value="Masculin">Masculin</option>
                 </select><br>
-                <label>Data nașterii: </label><input type="date" name="bday" required><br />
-                <label>Județul: </label><input type="text" name="judet" required><br />
-                <label>Localitatea: </label><input type="text" name="localitate" required><br />
+                <label>Data nașterii: </label><input type="date" name="birthdate" required><br />
+                <label>Județul: </label><input type="text" name="county" required><br />
+                <label>Localitatea: </label><input type="text" name="city" required><br />
                 <label>CNP: </label><input type="text" name="cnp" required><br />
-                <label>Seria: </label><input type="text" name="seria" required><br />
-                <label>Numărul: </label><input type="text" name="numarul" required><br />
-                <label>Emis de: </label><input type="text" name="emisde" required><br />
-                <label>Emis la: </label><input type="date" name="emisla" required><br />
-                <label>Expiră la: </label><input type="date" name="expirala" required><br />
+                <label>Seria: </label><input type="text" name="serie" required><br />
+                <label>Numărul: </label><input type="text" name="number" required><br />
+                <label>Emis de: </label><input type="text" name="issued_by" required><br />
+                <label>Emis la: </label><input type="date" name="issued_at" required><br />
+                <label>Expiră la: </label><input type="date" name="expires_at" required><br />
                 <input type="submit" value="Adauga">
                 <input type="reset">
                 </form>
