@@ -59,50 +59,50 @@
 	</div>
 	<div id=clear></div>
         <h2>Studii universitare</h2>
-                <form action="studiiuniv" method="POST">
+                <form action="studiiuniversitare" method="POST">
                 <input type="checkbox" name="nu" value="nu">Nu am absolvit alte studii universitare	
                 <br/>
-                <label>Județul: </label><input type="text" name="judetul"><br />
-                <label>Universitatea: </label><input type="text" name="universitatea"><br />
-                <label>Domeniul: </label><input type="text" name="domeniul"><br />
-                <label>Facultatea: </label><input type="text" name="facultatea"><br />
-                <label>Specializarea: </label><input type="text" name="specializarea"><br />
-                <label>Titlul obținut: </label><input type="text" name="titlul"><br />
+                <label>Județul: </label><input type="text" name="county"><br />
+                <label>Universitatea: </label><input type="text" name="university"><br />
+                <label>Domeniul: </label><input type="text" name="domain"><br />
+                <label>Facultatea: </label><input type="text" name="faculty"><br />
+                <label>Specializarea: </label><input type="text" name="specialty"><br />
+                <label>Titlul obținut: </label><input type="text" name="title"><br />
                 <label>Forma învățământ: </label>
-                <select name="formainv">
+                <select name="educational_form">
                     <option value=""></option>
-                    <option value="farafrecventa">Fără frecvență</option>
-                    <option value="ladistanta">Învățământ la distanță</option>
-                    <option value="zi">Zi(cu frecvență)</option>
-                    <option value="seral">Seral</option>
+                    <option value="Fără frecvență">Fără frecvență</option>
+                    <option value="Învățământ la distanță">Învățământ la distanță</option>
+                    <option value="Zi(cu frecvență)">Zi(cu frecvență)</option>
+                    <option value="Seral">Seral</option>
                 </select><br>
                 <label>Forma financiară: </label>
-                <select name="formafin">
+                <select name="financial_form">
                     <option value=""></option>
-                    <option value="buget">Buget</option>
-                    <option value="bursa">Bursă</option>
-                    <option value="cpl">Taxă CPL(Cont Propriu în Lei)</option>
+                    <option value="Buget">Buget</option>
+                    <option value="Bursă">Bursă</option>
+                    <option value="Taxă CPL(Cont Propriu în Lei)">Taxă CPL(Cont Propriu în Lei)</option>
                 </select><br>
-                <label>Durata studii (ani): </label><input type="text" name="durata"><br />
-                <label>Anul absolvirii: </label><input type="text" name="anabs"><br />
-                <label>Medie examen licență: </label><input type="text" name="medielicenta"><br />
-                <label>Media anilor de studiu: </label><input type="text" name="medieani"><br />
+                <label>Durata studii (ani): </label><input type="text" name="duration"><br />
+                <label>Anul absolvirii: </label><input type="text" name="graduation"><br />
+                <label>Medie examen licență: </label><input type="text" name="exam_average"><br />
+                <label>Media anilor de studiu: </label><input type="text" name="years_average"><br />
                 <p>Date identificare diplomă</p>
                 <label>Tipul: </label>
-                <select name="tipul">
+                <select name="type">
                     <option value=""></option>
-                    <option value="actechiv">Act echivalent(studii străinătate)</option>
-                    <option value="actrecunoastere">Act recunoaștere diplomă(DGRIE/DGRED)</option>
-                    <option value="adeverinta">Adeverința absolvire(licență)</option>
-                    <option value="diplomalic">Diplomă de licență</option>
-                    <option value="diplomamas">Diplomă de master</option>
+                    <option value="Act echivalent(studii străinătate)">Act echivalent(studii străinătate)</option>
+                    <option value="Act recunoaștere diplomă(DGRIE/DGRED)">Act recunoaștere diplomă(DGRIE/DGRED)</option>
+                    <option value="Adeverința absolvire(licență)">Adeverința absolvire(licență)</option>
+                    <option value="Diplomă de licență">Diplomă de licență</option>
+                    <option value="Diplomă de master">Diplomă de master</option>
                 </select><br>
-                <label>Emitent: </label><input type="text" name="emitent" required><br />
-                <label>Seria: </label><input type="text" name="seria" required><br />
-                <label>Numărul: </label><input type="text" name="numarul" required><br />
-                <label>An emitere: </label><input type="text" name="anemiter" required><br />
+                <label>Emitent: </label><input type="text" name="issuer" required><br />
+                <label>Seria: </label><input type="text" name="serie" required><br />
+                <label>Numărul: </label><input type="text" name="number" required><br />
+                <label>An emitere: </label><input type="text" name="issue_year" required><br />
                 <p>Supliment la diplomă/foaie matricolă care însoțește actul de studii</p>
-                <label>Numărul: </label><input type="text" name="numarmat"><br />
+                <label>Numărul: </label><input type="text" name="transcript_number"><br />
                 <input type="submit" value="Adauga">
                 <input type="reset">
                 </form>

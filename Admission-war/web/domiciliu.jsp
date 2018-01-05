@@ -60,15 +60,15 @@
 	<div id=clear></div>
         <h2>Domiciliu stabil</h2>
                 <form action="domiciliulstabil" method="POST">
-                <label>Județul: </label><input type="text" name="judet" required><br />
-                <label>Localitatea: </label><input type="text" name="localitate" required><br />
-                <label>Cod poștal: </label><input type="text" name="codpostal" required><br />
-                <label>Strada: </label><input type="text" name="strada" required><br />
-                <label>Numărul: </label><input type="text" name="numarul" required><br />
-                <label>Blocul(opțional): </label><input type="text" name="blocul"><br />
-                <label>Scara(opțional): </label><input type="text" name="scara"><br />
-                <label>Etajul(opțional): </label><input type="text" name="etajul"><br />
-                <label>Apartamentul(opțional): </label><input type="text" name="apartamentul"><br />
+                <label>Județul: </label><input type="text" name="county" required><br />
+                <label>Localitatea: </label><input type="text" name="city" required><br />
+                <label>Cod poștal: </label><input type="text" name="postal_code" required><br />
+                <label>Strada: </label><input type="text" name="street" required><br />
+                <label>Numărul: </label><input type="text" name="house_number" required><br />
+                <label>Blocul(opțional): </label><input type="text" name="block"><br />
+                <label>Scara(opțional): </label><input type="text" name="stair"><br />
+                <label>Etajul(opțional): </label><input type="text" name="floor"><br />
+                <label>Apartamentul(opțional): </label><input type="text" name="appartament"><br />
                 <input type="submit" value="Adauga">
                 <input type="reset">
                 </form>

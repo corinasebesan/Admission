@@ -60,34 +60,34 @@
 	<div id=clear></div>
         <h2>Studii liceale</h2>
                 <form action="studiiliceale" method="POST">
-                <label>Județul: </label><input type="text" name="judet" required><br />
-                <label>Liceul absolvit: </label><input type="text" name="liceulabsolvit" required><br />
-                <label>Profilul: </label><input type="text" name="profilul" required><br />
+                <label>Județul: </label><input type="text" name="highschool_county" required><br />
+                <label>Liceul absolvit: </label><input type="text" name="graduated_highschool" required><br />
+                <label>Profilul: </label><input type="text" name="section" placeholder="Nume profil, filiera, tip profil" required><br />
                 <label>Forma învățământ: </label>
-                <select name="formainvatamant" required>
-                    <option value="farafrecventa">Fără frecvență</option>
-                    <option value="ladistanta">Învățământ la distanță</option>
-                    <option value="zi">Zi(cu frecvență)</option>
-                    <option value="seral">Seral</option>
+                <select name="form" required>
+                    <option value="Fără frecvență">Fără frecvență</option>
+                    <option value="Învățământ la distanță">Învățământ la distanță</option>
+                    <option value="Zi(cu frecvență)">Zi(cu frecvență)</option>
+                    <option value="Seral">Seral</option>
                 </select><br/>
-                <label>Durata studii (ani): </label><input type="text" name="duratastudii" required><br />
-                <label>Anul absolvirii: </label><input type="text" name="anulabsolvirii" required><br />
-                <label>Media liceu: </label><input type="text" name="medieliceu" required><br />
-                <label>Anul bacalaureatului: </label><input type="text" name="anbac" required><br />
-                <label>Media BAC: </label><input type="text" name="mediebac" required><br />
+                <label>Durata studii (ani): </label><input type="text" name="duration" required><br />
+                <label>Anul absolvirii: </label><input type="text" name="graduation" required><br />
+                <label>Media liceu: </label><input type="text" name="highschool_average" required><br />
+                <label>Anul bacalaureatului: </label><input type="text" name="bac_year" required><br />
+                <label>Media BAC: </label><input type="text" name="bac_average" required><br />
                 <p>Date identificare diplomă</p>
                 <label>Tipul: </label>
-                <select name="tipul" required>
-                    <option value="actechiv">Act echivalent(studii străinătate)</option>
-                    <option value="actrecunoastere">Act recunoaștere diplomă(DGRIE/DGRED)</option>
-                    <option value="adeverinta">Adeverința de bacalaureat</option>
-                    <option value="diploma">Diplomă de bacalaureat</option>
+                <select name="type" required>
+                    <option value="Act echivalent(studii străinătate)">Act echivalent(studii străinătate)</option>
+                    <option value="Act recunoaștere diplomă(DGRIE/DGRED)">Act recunoaștere diplomă(DGRIE/DGRED)</option>
+                    <option value="Adeverința de bacalaureat">Adeverința de bacalaureat</option>
+                    <option value="Diplomă de bacalaureat">Diplomă de bacalaureat</option>
                 </select><br/>
-                <label>Emitent: </label><input type="text" name="emitent" required><br />
-                <label>Seria: </label><input type="text" name="seria" required><br />
-                <label>Numărul: </label><input type="text" name="numarul" required><br />
-                <label>An emitere: </label><input type="text" name="anemiter" required><br />
-                <label>Nr. foaie matricolă: </label><input type="text" name="numarfoaie" required><br />
+                <label>Emitent: </label><input type="text" name="issuer" required><br />
+                <label>Seria: </label><input type="text" name="diploma_serie" required><br />
+                <label>Numărul: </label><input type="text" name="diploma_number" required><br />
+                <label>An emitere: </label><input type="text" name="issue_year" required><br />
+                <label>Nr. foaie matricolă: </label><input type="text" name="transcript_number" required><br />
                 <input type="submit" value="Adauga">
                 <input type="reset">
                 </form>

@@ -6,7 +6,6 @@
 package Servlet;
 
 import entity.CountDetails;
-import entity.PersonalData;
 import session.UserSession;
 import java.io.IOException;
 import java.io.PrintWriter;
