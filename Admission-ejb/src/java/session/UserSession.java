@@ -5,11 +5,14 @@
  */
 package session;
 
+import entity.AdmissionSession;
 import entity.CountDetails;
+import entity.Documents;
 import entity.HighschoolEducation;
 import entity.OtherData;
 import entity.PersonalData;
 import entity.StableReidency;
+import entity.Taxes;
 import entity.UniversityEducation;
 import entity.User;
 import java.util.List;
@@ -93,7 +96,40 @@ public interface UserSession {
 
     CountDetails getCountDetails(int idacc);
 
-    List<PersonalData> getAllCountDetails();
+    List<CountDetails> getAllCountDetails();
+    
+    void addAdmissionSession(AdmissionSession admissionSession);
+
+    void editAdmissionSession(AdmissionSession admissionSession);
+
+    void deleteAdmissionSession(int idses);
+
+    AdmissionSession getAdmissionSession(int idses);
+
+    List<AdmissionSession> getAllAdmissionSession();
+
+    List<AdmissionSession> getAllSessionsAndSpecialtys();
+    
+    void addDocuments(Documents documents);
+
+    void editDocuments(Documents documents);
+
+    void deleteDocuments(int iddoc);
+
+    Documents getDocuments(int iddoc);
+
+    List<Documents> getAllDocuments();
+    
+    void addTaxes(Taxes taxes);
+
+    void editTaxes(Taxes taxes);
+
+    void deleteTaxes(int idtax);
+
+    Taxes getTaxes(int idtax);
+
+    List<Taxes> getAllTaxes();
 
 }
+
 

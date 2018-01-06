@@ -5,11 +5,14 @@
  */
 package session;
 
+import entity.AdmissionSession;
 import entity.CountDetails;
+import entity.Documents;
 import entity.HighschoolEducation;
 import entity.OtherData;
 import entity.PersonalData;
 import entity.StableReidency;
+import entity.Taxes;
 import entity.UniversityEducation;
 import entity.User;
 import java.util.List;
@@ -209,9 +212,88 @@ public class UserSessionImpl implements UserSession {
 }
 
     @Override
-    public List<PersonalData> getAllCountDetails(){
+    public List<CountDetails> getAllCountDetails(){
         return em.createNamedQuery("CountDetails.getAll").getResultList();
 }
+
+    @Override
+    public void addAdmissionSession(AdmissionSession admissionSession){
+        em.persist(admissionSession);
+    }
+
+    @Override
+    public void editAdmissionSession(AdmissionSession admissionSession){
+        em.merge(admissionSession);
+    }
+
+    @Override
+    public void deleteAdmissionSession(int idses){
+        em.remove(getAdmissionSession(idses));
+    }
+
+    @Override
+    public AdmissionSession getAdmissionSession(int idses){
+        return em.find(AdmissionSession.class, idses);
+    }
+
+    @Override
+    public List<AdmissionSession> getAllAdmissionSession(){
+        return em.createNamedQuery("AdmissionSession.getAll").getResultList();
+    }
     
+    @Override
+    public List<AdmissionSession> getAllSessionsAndSpecialtys(){
+        return em.createNamedQuery("AdmissionSession.getAllSessionsAndSpecialtys").getResultList();
+    }
+
+    @Override
+    public void addDocuments(Documents documents) {
+        em.persist(documents);
+    }
+
+    @Override
+    public void editDocuments(Documents documents) {
+        em.merge(documents);
+    }
+
+    @Override
+    public void deleteDocuments(int iddoc) {
+        em.remove(getDocuments(iddoc));
+    }
+
+    @Override
+    public Documents getDocuments(int iddoc) {
+        return em.find(Documents.class, iddoc);
+    }
+
+    @Override
+    public List<Documents> getAllDocuments() {
+        return em.createNamedQuery("Documents.getAll").getResultList();
+    }
+
+    @Override
+    public void addTaxes(Taxes taxes) {
+        em.persist(taxes);
+    }
+
+    @Override
+    public void editTaxes(Taxes taxes) {
+        em.merge(taxes);
+    }
+
+    @Override
+    public void deleteTaxes(int idtax) {
+        em.remove(getTaxes(idtax));
+    }
+
+    @Override
+    public Taxes getTaxes(int idtax) {
+        return em.find(Taxes.class, idtax);
+    }
+
+    @Override
+    public List<Taxes> getAllTaxes() {
+        return em.createNamedQuery("Taxes.getAll").getResultList();
+    }
 }
 

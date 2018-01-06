@@ -83,7 +83,7 @@ public class DetailsServlet extends HttpServlet {
             out.println("<li><a href=\"http://csac.ulbsibiu.ro/\"; target=\"_blank\">Departamentul de Calculatoare și Inginerie Electrică</a></li>");
             out.println("<li><a href=\"http://old.inginerie.ulbsibiu.ro/dep.iim/index.php?option=com_content\"; target=\"_blank\">Departamentul de Inginerie Industrială și Management</a></li>");
             out.println("<li><a href=\"http://old.inginerie.ulbsibiu.ro/dep.mei/ro/\"; target=\"_blank\">Departamentul de Mașini și Echipamente Industriale</a></li>");
-            out.println("<li><a href=# target=\"_blank\">Departamentul IOSUD (în construcție)</a></li>");
+            out.println("<li><a href=#>Departamentul IOSUD (în construcție)</a></li>");
             out.println("</ul>");
             out.println("</li>");
             out.println("<li><a href=\"#\">Bio</a>");
@@ -98,9 +98,10 @@ public class DetailsServlet extends HttpServlet {
             out.println("<li><a href=\"#\" >Înscriere</a>");
             out.println("<ul>");
             out.println("<li><a href=\"sesiuni.jsp\" >Sesiuni</a></li>");
-            out.println("<li><a href=\"dosare.jsp\" >Dosarele mele</a></li>");
-            out.println("<li><a href=\"documente.jsp\" >Documente</a></li>");
+            out.println("<li><a href=\"documente.jsp\" >Documente</a></li>");				
             out.println("<li><a href=\"taxe.jsp\" >Plată taxe</a></li>");
+            out.println("<li><a href=\"candidati.jsp\">Listă candidați</a></li>");
+            out.println("<li><a href=\"finale.jsp\">Rezultate finale</a></li>");
             out.println("</ul>");
             out.println("</li>");
             out.println("<li><a href=\"#\" >Contul meu</a>");
@@ -108,6 +109,7 @@ public class DetailsServlet extends HttpServlet {
             out.println("<li><a href=\"/Admission-war/detaliicont\" >Detalii cont</a></li>");
             out.println("<li><a href=\"index.html\" >Log out</a></li>");
             out.println("</ul>");
+            out.println("<li><a href=\"contact2.html\">Contact</a></li>");
             out.println("</li>");
             out.println("</ul>");
             out.println("</div>");
@@ -144,6 +146,9 @@ public class DetailsServlet extends HttpServlet {
             out.println("<td>"+cd7.getExist()+"</td>");
             out.println("</tr>");
             out.println("</table>");
+            out.println("<p>Pot fi completate până la data de:</p>");
+            out.println("<p>Examenul are loc pe data de:</p>");
+            out.println("<p>Rezultatele finale se vor afișa pe data de:</p>");
             out.println("</div>");
             out.println("</main>");
             out.println("<footer>");

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : domiciliu
-    Created on : Dec 27, 2017, 11:39:42 PM
+    Document   : finale
+    Created on : Jan 6, 2018, 1:42:59 PM
     Author     : cory4
 --%>
 
@@ -60,20 +60,25 @@
             </ul>
 	</div>
 	<div id=clear></div>
-        <h2>Domiciliu stabil</h2>
-                <form action="domiciliulstabil" method="POST">
-                <label>Județul: </label><input type="text" name="county" required><br />
-                <label>Localitatea: </label><input type="text" name="city" required><br />
-                <label>Cod poștal: </label><input type="text" name="postal_code" required><br />
-                <label>Strada: </label><input type="text" name="street" required><br />
-                <label>Numărul: </label><input type="text" name="house_number" required><br />
-                <label>Blocul(opțional): </label><input type="text" name="block"><br />
-                <label>Scara(opțional): </label><input type="text" name="stair"><br />
-                <label>Etajul(opțional): </label><input type="text" name="floor"><br />
-                <label>Apartamentul(opțional): </label><input type="text" name="appartament"><br />
-                <input type="submit" value="Adauga">
-                <input type="reset">
-                </form>
+        <h2>Rezultatele finale sunt:</h2>
+        <ul>
+            <li>Tehnologia construcțiilor de mașini (TCM):</li>
+            <li>Mașini unelte și sisteme de producție (MUSP):</li>
+            <li>Tehnologia tricotajelor și confecțiilor (TTC):</li>
+            <li>Inginerie economică în domeniul mecanic (IEDM): </li>
+            <li>Inginerie economică industrială (IEI): </li>
+            <li>Calculatoare (C):</li>
+            <li>Tehnologia informației (TI):</li>
+            <li>Ingineria sistemelor multimedia (ISM):</li>
+            <li>Electromecanica (EM):</li>
+            <li>Electronica aplicată (EA):</li>
+            <li>Transportul, depozitarea și distribuția hidrocarburilor (TDDH):</li>
+            <li>Ingineria și protecția mediului în industrie (IPMI):</li>
+            <li>Ingineria Transporturilor și a Traficului (ITT):</li>
+            <li>Mecatronică (MEC):</li>
+            <li>Robotică (ROB):</li>
+        </ul>
+        <div id=clear></div>
     </main>
     <footer>
 	<p>Copyright &copy; 2017 I.C.E.</p>  
