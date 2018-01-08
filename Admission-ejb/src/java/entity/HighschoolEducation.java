@@ -25,7 +25,7 @@ public class HighschoolEducation implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long idhigh;
+    private int idhigh;
     @Column
     private String highschool_county;
     @Column
@@ -78,11 +78,11 @@ public class HighschoolEducation implements Serializable {
         this.transcript_number = transcript_number;
     }
     
-    public Long getId() {
+    public int getId() {
         return idhigh;
     }
 
-    public void setId(Long idhigh) {
+    public void setId(int idhigh) {
         this.idhigh = idhigh;
     }
 

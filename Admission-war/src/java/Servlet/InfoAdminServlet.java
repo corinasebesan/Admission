@@ -5,9 +5,7 @@
  */
 package Servlet;
 
-import entity.CountDetails;
 import entity.OtherData;
-import session.UserSession;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -15,15 +13,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import session.UserSession;
 
 /**
  *
  * @author cory4
  */
-@WebServlet(name = "InfoServlet", urlPatterns = {"/alteinformatii"})
-public class InfoServlet extends HttpServlet {
-
-    @EJB
+@WebServlet(name = "InfoAdminServlet", urlPatterns = {"/modificareinfo"})
+public class InfoAdminServlet extends HttpServlet {
+ @EJB
     private UserSession userSessionImpl;
      
     @Override
@@ -47,15 +45,13 @@ public class InfoServlet extends HttpServlet {
         String special_social = request.getParameter("special_social");
         String handicaped = request.getParameter("handicaped");
         OtherData od = new OtherData(civil_state, nationality, ethnicity, citizenship, previous_citizenship, special_social, handicaped);
-        CountDetails cdd=new CountDetails(2,"Alte informatii", "OK");
          
-         if("Adauga".equalsIgnoreCase(action)){
-            userSessionImpl.addOtherData(od);
-            userSessionImpl.editCountDetails(cdd);
-        }else if("Schimbă".equalsIgnoreCase(action)){
+         if("Schimbă".equalsIgnoreCase(action)){
             userSessionImpl.editOtherData(od);
+        }else if("Șterge".equalsIgnoreCase(action)){
+            userSessionImpl.deleteOtherData(od.getId());
         }
-         request.getRequestDispatcher("userPage.html").forward(request, response);
+         request.getRequestDispatcher("infoAdmin.jsp").forward(request, response);
     }
 
 }

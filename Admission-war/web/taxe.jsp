@@ -63,10 +63,11 @@
         <h2>Plată taxe</h2>
 		<p>Achitați taxele de înscriere: </p>
                 <form action="taxe" method="POST">
+                <lable>Total plată: 150RON</lable>
                 <lable>Selecteaza modul de plată:</label>
                 <select name="payment" required>
                     <option value="Card bancar">Card bancar</option>
-                    <option value="Virament bancar (ordin de plată)">Virament bancar (ordin de plată)</option>
+                    <option value="Virament bancar(ordin de plată)">Virament bancar (ordin de plată)</option>
                     <option value="Cash(la facultate)">Cash(la facultate)</option>
                     </select><br>
                 <input type="submit" value="Plateste">

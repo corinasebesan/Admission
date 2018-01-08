@@ -5,25 +5,23 @@
  */
 package Servlet;
 
-import entity.CountDetails;
 import entity.StableReidency;
-import session.UserSession;
 import java.io.IOException;
-import javax.ejb.EJB; 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import session.UserSession;
 
 /**
  *
  * @author cory4
  */
-@WebServlet(name = "DomiciliuServlet", urlPatterns = {"/domiciliulstabil"})
-public class DomiciliuServlet extends HttpServlet {
-
-    @EJB
+@WebServlet(name = "DomiciliuAdminServlet", urlPatterns = {"/modificaredomiciliu"})
+public class DomiciliuAdminServlet extends HttpServlet {
+@EJB
     private UserSession userSessionImpl;
      
     @Override
@@ -47,17 +45,12 @@ public class DomiciliuServlet extends HttpServlet {
         String floor = request.getParameter("floor");
         String appartament = request.getParameter("appartament");
         StableReidency sr = new StableReidency(county, city, postal_code, street, house_number, block, stair, floor, appartament);
-        CountDetails cdd=new CountDetails(3,"Domiciliu", "OK");
          
-          if("Adauga".equalsIgnoreCase(action)){
-            userSessionImpl.addStableReidency(sr);
-            userSessionImpl.editCountDetails(cdd);
-        }else if("Schimbă".equalsIgnoreCase(action)){
+         if("Schimbă".equalsIgnoreCase(action)){
             userSessionImpl.editStableReidency(sr);
+        }else if("Șterge".equalsIgnoreCase(action)){
+            userSessionImpl.deleteStableReidency(sr.getId());
         }
-         request.getRequestDispatcher("userPage.html").forward(request, response);
+         request.getRequestDispatcher("domiciliuAdmin.jsp").forward(request, response);
     }
-
-
-
 }

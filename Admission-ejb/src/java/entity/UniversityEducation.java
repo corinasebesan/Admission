@@ -25,7 +25,7 @@ public class UniversityEducation implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long iduniv;
+    private int iduniv;
     @Column
     private String county;
     @Column
@@ -87,11 +87,11 @@ public class UniversityEducation implements Serializable {
         this.transcript_number = transcript_number;
     }
     
-    public Long getId() {
+    public int getId() {
         return iduniv;
     }
     
-    public void setId(Long iduniv) {
+    public void setId(int iduniv) {
         this.iduniv = iduniv;
     }
 

@@ -5,25 +5,24 @@
  */
 package Servlet;
 
-import entity.CountDetails;
 import entity.HighschoolEducation;
-import session.UserSession;
 import java.io.IOException;
-import javax.ejb.EJB; 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import session.UserSession;
 
 /**
  *
  * @author cory4
  */
-@WebServlet(name = "HighschoolServlet", urlPatterns = {"/studiiliceale"})
-public class HighschoolServlet extends HttpServlet {
+@WebServlet(name = "HighschoolAdminServlet", urlPatterns = {"/modificareliceu"})
+public class HighschoolAdminServlet extends HttpServlet {
 
-    @EJB
+     @EJB
     private UserSession userSessionImpl;
      
     @Override
@@ -53,15 +52,13 @@ public class HighschoolServlet extends HttpServlet {
         String issue_year = request.getParameter("issue_year");
         String transcript_number = request.getParameter("transcript_number");
         HighschoolEducation he = new HighschoolEducation(highschool_county, graduated_highschool, section, form, duration, graduation, highschool_average, bac_year, bac_average, type, issuer, diploma_serie, diploma_number, issue_year, transcript_number);
-        CountDetails cdd=new CountDetails(4,"Studii liceale", "OK");
          
-         if("Adauga".equalsIgnoreCase(action)){
-            userSessionImpl.addHighschoolEducation(he);
-         userSessionImpl.editCountDetails(cdd);
-        }else if("Schimbă".equalsIgnoreCase(action)){
+         if("Schimbă".equalsIgnoreCase(action)){
             userSessionImpl.editHighschoolEducation(he);
+        }else if("Șterge".equalsIgnoreCase(action)){
+            userSessionImpl.deleteHighschoolEducation(he.getId());
         }
-         request.getRequestDispatcher("userPage.html").forward(request, response);
+         request.getRequestDispatcher("licealeAdmin.jsp").forward(request, response);
     }
 
 

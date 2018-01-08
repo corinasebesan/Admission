@@ -7,7 +7,6 @@ package Servlet;
 
 import entity.CountDetails;
 import entity.Documents;
-import session.UserSession;
 import java.io.IOException;
 import java.sql.Blob;
 import javax.ejb.EJB;
@@ -17,13 +16,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import session.UserSession;
 
 /**
  *
  * @author cory4
  */
-@WebServlet(name = "DocumentsServlet", urlPatterns = {"/ducumente"})
-public class DocumentsServlet extends HttpServlet {
+@WebServlet(name = "DocumenteAdminServlet", urlPatterns = {"/modificadocumente"})
+public class DocumenteAdminServlet extends HttpServlet {
 
     @EJB
     private UserSession userSessionImpl;
@@ -57,15 +57,12 @@ public class DocumentsServlet extends HttpServlet {
         Part filePart8 = request.getPart("previous_experience");
         Blob previous_experience = (Blob) filePart8.getInputStream();
         Documents d = new Documents(type, bac_diploma, birth_certificate, medical_certificate, id, previous_college, bachelor_diploma, diploma_supplement,previous_experience) ;
-        CountDetails cdd=new CountDetails(6,"Documente", "OK");
-         
-         if("Adauga".equalsIgnoreCase(action)){
-            userSessionImpl.addDocuments(d);
-            userSessionImpl.editCountDetails(cdd);
-        }else if("Schimbă".equalsIgnoreCase(action)){
+         if("Schimbă".equalsIgnoreCase(action)){
             userSessionImpl.editDocuments(d);
+        }else if("Șterge".equalsIgnoreCase(action)){
+            userSessionImpl.deleteDocuments(d.getIddoc());
         }
-         request.getRequestDispatcher("userPage.html").forward(request, response);
+         request.getRequestDispatcher("documenteAdmin.jsp").forward(request, response);
     }
 
 }

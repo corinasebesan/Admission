@@ -6,6 +6,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -42,6 +45,24 @@ public class User implements Serializable {
     private String cnp;
     @Column
     private String phone;
+    @OneToOne
+    private PersonalData PersonalData;
+    @OneToOne
+    private UniversityEducation UniversityEducation;
+    @OneToOne
+    private HighschoolEducation HighschoolEducation;
+    @OneToOne
+    private OtherData OtherData;
+    @OneToOne
+    private StableReidency StableReidency;
+    @OneToOne
+    private Taxes Taxes;
+    @OneToOne
+    private Documents Documents;
+    @OneToMany
+    private Collection<CountDetails>CountDetails;
+    @OneToMany
+    private Collection<AdmissionSession>AdmissionSession;
 
     public User() {
     }
@@ -112,5 +133,79 @@ public class User implements Serializable {
     public void setId(int iduser) {
         this.iduser = iduser;
     }
+
+    public PersonalData getPersonalData() {
+        return PersonalData;
+    }
+
+    public UniversityEducation getUniversityEducation() {
+        return UniversityEducation;
+    }
+
+    public HighschoolEducation getHighschoolEducation() {
+        return HighschoolEducation;
+    }
+
+    public OtherData getOtherData() {
+        return OtherData;
+    }
+
+    public StableReidency getStableReidency() {
+        return StableReidency;
+    }
+
+    public Taxes getTaxes() {
+        return Taxes;
+    }
+
+    public Documents getDocuments() {
+        return Documents;
+    }
+
+    public Collection<CountDetails> getCountDetails() {
+        return CountDetails;
+    }
+
+    public Collection<AdmissionSession> getAdmissionSession() {
+        return AdmissionSession;
+    }
+
+    public void setPersonalData(PersonalData PersonalData) {
+        this.PersonalData = PersonalData;
+    }
+
+    public void setUniversityEducation(UniversityEducation UniversityEducation) {
+        this.UniversityEducation = UniversityEducation;
+    }
+
+    public void setHighschoolEducation(HighschoolEducation HighschoolEducation) {
+        this.HighschoolEducation = HighschoolEducation;
+    }
+
+    public void setOtherData(OtherData OtherData) {
+        this.OtherData = OtherData;
+    }
+
+    public void setStableReidency(StableReidency StableReidency) {
+        this.StableReidency = StableReidency;
+    }
+
+    public void setTaxes(Taxes Taxes) {
+        this.Taxes = Taxes;
+    }
+
+    public void setDocuments(Documents Documents) {
+        this.Documents = Documents;
+    }
+
+    public void setCountDetails(Collection<CountDetails> CountDetails) {
+        this.CountDetails = CountDetails;
+    }
+
+    public void setAdmissionSession(Collection<AdmissionSession> AdmissionSession) {
+        this.AdmissionSession = AdmissionSession;
+    }
+    
+    
     
 }

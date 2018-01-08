@@ -5,25 +5,25 @@
  */
 package Servlet;
 
-import entity.CountDetails;
+
 import entity.UniversityEducation;
-import session.UserSession;
 import java.io.IOException;
-import javax.ejb.EJB; 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import session.UserSession;
 
 /**
  *
  * @author cory4
  */
-@WebServlet(name = "UniversityServlet", urlPatterns = {"/studiiuniversitare"})
-public class UniversityServlet extends HttpServlet {
+@WebServlet(name = "UniversityAdminServlet", urlPatterns = {"/modificareuniversitare"})
+public class UniversityAdminServlet extends HttpServlet {
 
-    @EJB
+     @EJB
     private UserSession userSessionImpl;
      
     @Override
@@ -55,15 +55,13 @@ public class UniversityServlet extends HttpServlet {
         String issue_year = request.getParameter("issue_year");
         String transcript_number = request.getParameter("transcript_number");
         UniversityEducation ue = new UniversityEducation(county, university, domain, faculty, specialty, title, educational_form, financial_form, duration, graduation, exam_average, years_average, type, issuer, serie, number, issue_year, transcript_number);
-        CountDetails cdd=new CountDetails(5,"Studii universitare", "OK");
          
-         if("Adauga".equalsIgnoreCase(action)){
-            userSessionImpl.addUniversityEducation(ue);
-            userSessionImpl.editCountDetails(cdd);
-        }else if("Schimbă".equalsIgnoreCase(action)){
+        if("Schimbă".equalsIgnoreCase(action)){
             userSessionImpl.editUniversityEducation(ue);
+        }else if("Șterge".equalsIgnoreCase(action)){
+            userSessionImpl.deleteUniversityEducation(ue.getId());
         }
-         request.getRequestDispatcher("userPage.html").forward(request, response);
+         request.getRequestDispatcher("universitareAdmin.jsp").forward(request, response);
     }
 
 }

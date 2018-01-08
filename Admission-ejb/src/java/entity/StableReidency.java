@@ -25,7 +25,7 @@ public class StableReidency implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long idres;
+    private int idres;
     @Column
     private String county;
     @Column
@@ -60,11 +60,11 @@ public class StableReidency implements Serializable {
         this.appartament = appartament;
     }
     
-    public Long getId() {
+    public int getId() {
         return idres;
     }
 
-    public void setId(Long idres) {
+    public void setId(int idres) {
         this.idres = idres;
     }
 

@@ -71,7 +71,8 @@
                 <label>Scara(opțional): </label><input type="text" name="stair"><br />
                 <label>Etajul(opțional): </label><input type="text" name="floor"><br />
                 <label>Apartamentul(opțional): </label><input type="text" name="appartament"><br />
-                <input type="submit" value="Adauga">
+                <input type="submit" name="action" value="Adauga">
+                <input type="submit" name="action" value="Schimbă">
                 <input type="reset">
                 </form>
     </main>

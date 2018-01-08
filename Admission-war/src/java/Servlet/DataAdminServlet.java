@@ -5,7 +5,6 @@
  */
 package Servlet;
 
-import entity.CountDetails;
 import entity.PersonalData;
 import session.UserSession;
 import java.io.IOException;
@@ -20,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author cory4
  */
-@WebServlet(name = "DataServlet", urlPatterns = {"/datepersonale"})
-public class DataServlet extends HttpServlet {
+@WebServlet(name = "DataAdminServlet", urlPatterns = {"/modificaredatepersonale"})
+public class DataAdminServlet extends HttpServlet {
 
     @EJB
     private UserSession userSessionImpl;
@@ -35,7 +34,7 @@ public class DataServlet extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+         response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("action");
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
@@ -52,15 +51,14 @@ public class DataServlet extends HttpServlet {
         String issued_at = request.getParameter("issued_at");
         String expires_at = request.getParameter("expires_at");
         PersonalData pd = new PersonalData(father, previous_name, sex, birthdate, county, city, serie, number, issued_by, issued_at, expires_at, name, surname, cnp);
-        CountDetails cdd=new CountDetails(1,"Date personale", "OK");
-        if("Adauga".equalsIgnoreCase(action)){
-            userSessionImpl.addPersonalData(pd);
-            userSessionImpl.editCountDetails(cdd);
-        }else if("Schimbă".equalsIgnoreCase(action)){
+        if("Schimbă".equalsIgnoreCase(action)){
             userSessionImpl.editPersonalData(pd);
+        }else if("Șterge".equalsIgnoreCase(action)){
+            userSessionImpl.deletePersonalData(pd.getId());
         }
          
-         request.getRequestDispatcher("userPage.html").forward(request, response);
+         request.getRequestDispatcher("dateAdmin.jsp").forward(request, response);
     }
 
 }
+

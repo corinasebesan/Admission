@@ -1,6 +1,6 @@
 <%-- 
-    Document   : documente
-    Created on : Dec 27, 2017, 3:16:39 PM
+    Document   : documenteAdmin
+    Created on : Jan 8, 2018, 2:51:20 AM
     Author     : cory4
 --%>
 
@@ -20,49 +20,39 @@
 	</header>
         <main>
         <div id="nav">
-            <ul>
-                <li><a href="userPage.html">Acasă</a></li>
-                <li><a href="http://inginerie.ulbsibiu.ro/" target="_blank">Site-ul facultății</a></li>
-                <li><a href="#">Specializări</a>
+             <ul>
+                <li><a href="adminPage.html">Acasă</a></li>
+                <li><a href="listaSpecializari3.html">Specializări</a>
+                <li><a href="#">Bio</a>
                     <ul>
-			<li><a href="listaSpecializari2.html">Listă specializări</a></li>
-			<li><a href="http://csac.ulbsibiu.ro/" target="_blank">Departamentul de Calculatoare și Inginerie Electrică</a></li>
-                        <li><a href="http://old.inginerie.ulbsibiu.ro/dep.iim/index.php?option=com_content" target="_blank">Departamentul de Inginerie Industrială și Management</a></li>
-                        <li><a href="http://old.inginerie.ulbsibiu.ro/dep.mei/ro/" target="_blank">Departamentul de Mașini și Echipamente Industriale</a></li>
-                        <li><a href=#>Departamentul IOSUD (în construcție)</a></li>
+			<li><a href="dateAdmin.jsp">Date personale</a></li>
+			<li><a href="infoAdmin.jsp">Alte informații</a></li>
+			<li><a href="domiciliuAdmin.jsp">Domiciliu</a></li>
+			<li><a href="licealeAdmin.jsp">Studii liceale</a></li>
+			<li><a href="universitareAdmin.jsp">Studii universitare</a></li>
+                    </ul>
+		</li>
+		<li><a href="#">Înscriere</a>
+                    <ul>
+			<li><a href="sesiuniAdmin.jsp">Sesiuni</a></li>
+			<li><a href="documenteAdmin.jsp">Documente</a></li>
+			<li><a href="taxeAdmin.jsp">Plată taxe</a></li>
+                        <li><a href="candidati.jsp">Listă candidați</a></li>
+			<li><a href="finale.jsp">Rezultate finale</a></li>
+                    </ul>
+				</li>
+                <li><a href="#">Conturi utilizatori</a>
+                    <ul>
+			<li><a href="userAdmin.jsp">Modifica conturile utilizatorilor</a></li>
+			<li><a href="index.html">Log out</a></li>
                     </ul>
                 </li>
-				<li><a href="#">Bio</a>
-					<ul>
-						<li><a href="date.jsp">Date personale</a></li>
-						<li><a href="info.jsp">Alte informații</a></li>
-						<li><a href="domiciliu.jsp">Domiciliu</a></li>
-						<li><a href="liceale.jsp">Studii liceale</a></li>
-						<li><a href="universitare.jsp">Studii universitare</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Înscriere</a>
-					<ul>
-						<li><a href="sesiuni.jsp">Sesiuni</a></li>
-						<li><a href="documente.jsp">Documente</a></li>
-						<li><a href="taxe.jsp">Plată taxe</a></li>
-                                                <li><a href="candidati.jsp">Listă candidați</a></li>
-						<li><a href="finale.jsp">Rezultate finale</a></li>
-					</ul>
-				</li>
-                <li><a href="#">Contul meu</a>
-                    <ul>
-						<li><a href="/Admission-war/detaliicont">Detalii cont</a></li>
-						<li><a href="index.html">Log out</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact2.html">Contact</a></li>
             </ul>
 	</div>
 	<div id=clear></div>
         <h2>Copii documente</h2>
 		<p>Aici îți poți încărca copiile după documente.</p>
-                <form action="documente" method="POST" enctype="multipart/form-data">
+                <form action="modificadocumente" method="POST" enctype="multipart/form-data">
                 <label>Tip: </label> 
                 <select name="type" required>
                     <option value="Licenţă">Licenţă</option>
@@ -89,8 +79,8 @@
                 <label>Documente necesare numai pentru oricare frecvenţa redusă(FR) şi la distanţă(ID): </label>
                 <label>Adeverinţă că este încadrat în muncă/ diplomă de absolvire/ licenţă: </label>
                 <input type="file" name="previous_experience"/><br>
-                <input type="submit" name="action" value="Adauga">
                 <input type="submit" name="action" value="Schimbă">
+                <input type="submit" name="action" value="Șterge">
                 <input type="reset">
                 </form>
     </main>

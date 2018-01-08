@@ -45,15 +45,15 @@ footer{
 }
 #nav li{
 	float: left;
-	margin-left: 20px;
+	margin-left: 10px;
 	text-align: center;
 	margin-top: 10px;
-	width: 180px;
+	width: 160px;
         position:relative;
         background-color: rgb(172, 235, 244);
 }
 #nav ul {
-        font-size: 19px;
+        font-size: 17px;
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;

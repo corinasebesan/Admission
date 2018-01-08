@@ -25,7 +25,7 @@ public class PersonalData implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long idper;
+    private int idper;
     @Column
     private String father; 
     @Column
@@ -75,11 +75,11 @@ public class PersonalData implements Serializable{
         this.cnp=cnp;
     }
     
-    public Long getId() {
+    public int getId() {
         return idper;
     }
 
-    public void setId(Long idper) {
+    public void setId(int idper) {
         this.idper = idper;
     }
 

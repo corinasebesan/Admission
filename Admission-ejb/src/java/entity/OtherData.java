@@ -25,7 +25,7 @@ public class OtherData implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column
-    private Long idoth;
+    private int idoth;
     @Column
     private String civil_state;
     @Column
@@ -54,11 +54,11 @@ public class OtherData implements Serializable {
         this.handicaped = handicaped;
     }
     
-    public Long getId() {
+    public int getId() {
         return idoth;
     }
 
-    public void setId(Long idoth) {
+    public void setId(int idoth) {
         this.idoth = idoth;
     }
 

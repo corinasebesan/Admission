@@ -4,6 +4,8 @@
 * and open the template in the editor.
 */
 package Servlet;
+import entity.PersonalData;
+import entity.User;
 import session.UserSession;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -34,14 +36,17 @@ public class LoginServlet extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-     
+        User admin = new User("", "", "", "admin.admitere@gmail.com", "admin", "", "");
+        PersonalData pdd = new PersonalData ("V","","feminin","05/13/1996", "Sibiu", "Medias", "SB",  "123456","SPCLEP Copsa Mica", "06/13/2020",  "06/13/2014",  "Alexa",  "Iulia","2960513123456");
+        userSessionImpl.addUser(admin);
+        userSessionImpl.addPersonalData(pdd);
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String name=userSessionImpl.getNameByEmailAndPassword(email, password);
         
         
         try {
-            if(name!="")
+            if(!"".equals(name))
         {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -113,6 +118,9 @@ public class LoginServlet extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+            else if(email.equalsIgnoreCase("admin.admitere@gmail.com")&& password.equalsIgnoreCase("admin")){
+                request.getRequestDispatcher("adminPage.html").forward(request, response);
+            }
         }
         finally{
             out.close();
